@@ -60,3 +60,17 @@ create table product(
     primary key(id),
     created_at timestamp default current_timestamp
 );
+
+create table bill(
+    id int NOT NULL AUTO_INCREMENT,
+    uuid varchar(255) NOT NULL,
+    name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    contactNumber varchar(20) NOT NULL,
+    paymentMethod varchar(55) NOT NULL,
+    total int NOT NULL,
+    productDetails JSON DEFAULT NULL,
+    createdBy varchar(255) NOT NULL,
+    primary key(id),
+    created_at timestamp default current_timestamp
+)
