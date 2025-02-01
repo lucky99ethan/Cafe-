@@ -7,6 +7,7 @@ const connection = require('./connection');
 console.log('Step 3: Creating an instance of express');
 const app = express();
 const userRoute = require('./routes/user');
+const categoryRoute = require('./routes/category');
 
 
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 console.log('Step 6: Using express.json middleware to parse JSON bodies');
 app.use(express.json());
 app.use('/user', userRoute);
+app.use('/category', categoryRoute);
 
 
 module.exports = app; 
