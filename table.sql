@@ -49,3 +49,14 @@ create table category(
     created_at timestamp default current_timestamp,
     primary key(id)
 );
+
+create table product(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    category_id integer NOT NULL,
+    description varchar(255),
+    price integer,
+    status varchar(25),
+    primary key(id),
+    created_at timestamp default current_timestamp
+);

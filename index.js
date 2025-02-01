@@ -8,7 +8,7 @@ console.log('Step 3: Creating an instance of express');
 const app = express();
 const userRoute = require('./routes/user');
 const categoryRoute = require('./routes/category');
-
+const productRoute = require('./routes/product');
 
 
 
@@ -22,6 +22,7 @@ console.log('Step 6: Using express.json middleware to parse JSON bodies');
 app.use(express.json());
 app.use('/user', userRoute);
 app.use('/category', categoryRoute);
+app.use('/product', productRoute);
 
 
 module.exports = app; 
