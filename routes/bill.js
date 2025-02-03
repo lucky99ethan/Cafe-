@@ -135,9 +135,11 @@ router.delete("/delete/:id", auth.authenticateToken, (req, res, next) => {
     if (!err) {
       if (results.affectedRows == 0) {
         return res.status(400).json({ message: "Bill id does not found" });
+      } else {
+        return res.status(200).json({ message: "Bill deleted successfully" });
       }
     } else {
-      return res.status(200).json({ message: "Bill deleted successfully" });
+      return res.status(500).json(err);
     }
   });
 });
